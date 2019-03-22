@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Counter } from './Counter.js';
+import { ContextStore } from './ContextStore';
+import { ContextStoreWithReducer } from './ContextStoreWithReducer';
+import ButtonUsingReducer from './ButtonUsingReducer';
+import ButtonPanel from './ButtonPanel';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    render() {
+        // Each declaration of the store is an isolated instance
+        return (
+            <div className="App">
+                <ContextStore>
+                    <Counter/>
+                </ContextStore>
+                <ContextStore>
+                    <ButtonPanel/>
+                </ContextStore>
+                <ContextStoreWithReducer>
+                    <ButtonUsingReducer/>
+                </ContextStoreWithReducer>
+            </div>
+        );
+    }
 }
 
 export default App;

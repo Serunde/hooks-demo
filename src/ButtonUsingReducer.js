@@ -8,7 +8,7 @@ function Button() {
 
     return (
         <div>
-            <p>This button uses a context store with a reducer</p>
+            <p>This button uses a context store with a reducer (logs in console window)</p>
             <button onClick={toggle}>{isOn ? 'On' : 'Off'}</button>
         </div>
     );

@@ -8,6 +8,7 @@ function ButtonPanel() {
             <p>Additionally, the parent holding these buttons is unaware of the actions/state from Context</p>
             <Button/>
             <Button/>
+            <br/><br/>
         </div>
     );
 }

@@ -25,9 +25,11 @@ export function Counter() {
             <button onClick={handleClick}>
                 Click
             </button>
-            <p>{meter}</p>
+            <span>{meter}</span>
+            <br/><br/>
             <p>This button has its own instance of Context.Provider</p>
             <button onClick={toggle}>{isOn ? 'On' : 'Off'}</button>
+            <br/><br/>
         </div>
     )
 }

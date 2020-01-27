@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { useInterval } from './useInterval.js';
-import { Context } from './ContextStore';
+import Button from './Button';
 
 export function Counter() {
     const [count, setCount] = useState(0);
@@ -17,8 +17,6 @@ export function Counter() {
         if (meter !== '') setMeter(meter.slice(1));
     }, delay);
 
-    const { isOn, toggle } = useContext(Context);
-
     return (
         <div>
             <br/>
@@ -28,7 +26,7 @@ export function Counter() {
             <span>{meter}</span>
             <br/><br/>
             <p>This button has its own instance of Context.Provider</p>
-            <button onClick={toggle}>{isOn ? 'On' : 'Off'}</button>
+            <Button/>
             <br/><br/>
         </div>
     )

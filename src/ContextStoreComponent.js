@@ -5,16 +5,18 @@ export const Context = React.createContext();
 class ContextStore extends Component {
     state = {
         isOn: false,
+        switchCount: 0
     }
 
     toggle = () => {
-        this.setState(state => ({isOn: !state.isOn}));
+        this.setState(state => ({ isOn: !state.isOn }));
+        this.setState(state => ({ switchCount: state.switchCount + 1 }));
     }
 
     render() {
-        const { isOn, toggle } = this.state;
+        const { isOn, switchCount, toggle } = this.state;
         return (
-            <Context.Provider value={{ isOn, toggle }}>
+            <Context.Provider value={{ isOn, switchCount, toggle }}>
                 {this.props.children}
             </Context.Provider>
         );
